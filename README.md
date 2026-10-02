@@ -1,2 +1,79 @@
-# pixel
-A professional photo editing app for Android and MacBook, as a free alternative to Photoshop.
+# Pixel - محرر الصور الاحترافي (Professional Photo Editor)
+
+تطبيق احترافي ومستقل 100% يعمل أوفلاين بدون إنترنت (Offline) ومفتوح الصلاحيات بالكامل، مبني ليعمل على نظامي **macOS** و **Android** مع هوية وشعار جديدين كلياً.
+
+---
+
+### 📥 روابط التحميل المباشرة (Direct Downloads)
+
+| النظام | نوع الملف | رابط التحميل | الحجم |
+| :--- | :--- | :--- | :--- |
+| **macOS** (Apple Silicon & Intel) | مثبت بالسحب والإفلات (`.dmg`) | [تحميل Pixel-Installer.dmg](https://github.com/q2dhi/scpixel/releases/latest/download/Pixel-Installer.dmg) | 1.7 GB |
+| **Android** (الهواتف والأجهزة اللوحية) | حزمة تثبيت أندرويد (`.apk`) | [تحميل Pixel.apk](https://github.com/q2dhi/scpixel/releases/latest/download/Pixel.apk) | 14.3 MB |
+
+---
+
+## 🌟 الميزات الرئيسية (Key Features)
+
+1. **صلاحيات Premium مفتوحة مدى الحياة (Pixel Pro Unlocked):**
+   - تفعيل دائم لحساب Pro بدون أي تسجيل دخول أو دفع.
+   - رفع حد التراجع والخطوات التاريخية (**History Steps**) إلى 100 خطوة.
+   - دعم كامل لتصدير الملفات بكافة الصيغ الاحترافية (PSD, PNG, JPG, SVG, WEBP, PDF, TIFF, RAW, etc.).
+   - فتح جميع القوالب والأدوات المتقدمة.
+
+2. **يعمل بدون إنترنت بنسبة 100% (Fully Offline):**
+   - إلغاء كامل لجميع نداءات السيرفر والإعلانات والتتبع.
+   - إزالة زر الحساب ونوافذ الدفع لضمان تجربة مستخدم سلسة ونظيفة.
+   - خوادم محلية مدمجة وخفيفة في نسختي الماك والأندرويد لتشغيل محرك الـ WebAssembly والـ Canvas بكفاءة تامة.
+
+3. **هوية وشعار احترافي جديد (Pixel Identity):**
+   - تصميم شعار هندسي حديث ولامع لحرف **P** يرمز للبيكسلات وتدرجات النيون.
+   - أيقونات Retina فائقة الدقة لنظام ماك (`AppIcon.icns`) وأجهزة أندرويد (بكافة الكثافات).
+   - شاشة ترحيب مخصصة داخل المحرر بعنوان **Pixel PRO - OFFLINE PHOTO EDITOR**.
+
+---
+
+## 💻 نسخة الماك (macOS Desktop App)
+
+- **ملف التثبيت:** `Pixel-Installer.dmg` (تثبيت مباشر بالسحب والإفلات إلى مجلد Applications).
+- **التطبيق المباشر:** `Pixel.app`.
+- **شريط قوائم مخصص أصيل (Native Menu Bar):**
+  - دعم كامل لاختصارات لوحة المفاتيح: `Cmd+N` (مشروع جديد)، `Cmd+O` (فتح ملف)، `Cmd+S` (حفظ PSD)، `Cmd+Z` (تراجع)، إلخ.
+- **تكامل Finder والـ Dock:**
+  - دعم سحب وإفلات الصور مباشرة على التطبيق لفتحها فوراً.
+  - دعم النقر المزدوج لفتح ملفات الصور والمشاريع.
+
+---
+
+## 📱 نسخة الأندرويد (Android APK)
+
+- **ملف التثبيت:** `Pixel.apk` (حجم خفيف: ~14.3 ميجابايت).
+- **التوافق:** يدعم نظام أندرويد من الإصدار 5.0 (Lollipop) حتى أحدث إصدار Android 15/16 (`minSdk: 21`, `targetSdk: 35`).
+- **الميزات المدمجة:**
+  - خادم محلي مدمج وسريع يعمل في الخلفية مع اعتراض مباشر للأصول (`shouldInterceptRequest`).
+  - دعم مستعرض ملفات أندرويد الرسمي لاختيار الصور والملفات (`onShowFileChooser`).
+  - حفظ وتصدير التصاميم مباشرة في مجلد التنزيلات (`Downloads/Pixel`) مع التحديث التلقائي لمعرض الصور (Gallery).
+  - واجهة غامرة داكنة (Immersive Dark UI) لملء الشاشة والاستفادة القصوى من مساحة التحرير على الهواتف والأجهزة اللوحية.
+
+---
+
+## 🛠️ البناء والتطوير (Build & Run)
+
+### لتشغيل تطبيق الماك محلياً:
+```bash
+npm install
+npm start
+```
+
+### لبناء حزمة الماك (macOS App & DMG):
+```bash
+npm run pack:mac
+python3 scratch/build_dmg.py
+```
+
+### لبناء تطبيق الأندرويد (Android APK):
+```bash
+python3 android/build_apk.py
+# أو عبر Gradle:
+cd android && ./gradlew assembleRelease
+```
